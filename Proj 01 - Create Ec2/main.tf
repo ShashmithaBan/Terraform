@@ -1,3 +1,13 @@
+###########################################################################################
+### This projects is used to practice basics in TF ###
+###########################################################################################
+ # I created oinly main.tf file to keep it simple.
+ # In main.tf file, I defined the AWS provider and specified the region.
+ # In main.tf file, I created an EC2 instance using a specific AMI ID and instance type.
+ # I also added tags to the instance for easy identification.
+###########################################################################################
+
+
 provider "aws" {
   region = "us-east-1"
   
