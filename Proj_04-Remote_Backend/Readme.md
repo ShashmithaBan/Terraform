@@ -57,33 +57,30 @@ terraform {
   }
 }
 ```
-Required Variables
+### Required Variables
 Create terraform.tfvars from the example file:
-
+```
 bash
 cp terraform.tfvars.example terraform.tfvars
 Edit terraform.tfvars with your values:
 
 hcl
-# AWS Configuration
-aws_region = "us-east-1"
-
 # S3 Bucket for Remote State
-state_bucket_name = "your-unique-terraform-state-bucket"
+s3_bucket = "your-unique-terraform-state-bucket"
 
 # DynamoDB Table for State Locking
-lock_table_name = "terraform-state-lock"
-
-# VPC Configuration
-vpc_cidr = "10.0.0.0/16"
+dynamodb_table = "terraform-state-lock"
 
 # EC2 Configuration
 instance_type = "t2.micro"
-key_name      = "your-ssh-key"
-🛠️ Usage
-Initial Setup
-Create S3 Bucket and DynamoDB Table (one-time setup):
+ami_id = "ami-##############"
 
+```
+
+## 🛠️ Usage
+### Initial Setup
+Create S3 Bucket and DynamoDB Table (one-time setup):
+```
 bash
 # Create S3 bucket for state storage
 aws s3 mb s3://your-terraform-state-bucket --region us-east-1
@@ -95,17 +92,18 @@ aws dynamodb create-table \
   --key-schema AttributeName=LockID,KeyType=HASH \
   --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
   --region us-east-1
-Initialize Terraform:
+```
+### Initialize Terraform:
+```
 
-bash
 terraform init
+
 Plan and Apply
-bash
 # Plan the infrastructure
 terraform plan
-
 # Apply the configuration
 terraform apply
+
 Destroy Infrastructure
-bash
 terraform destroy
+```
