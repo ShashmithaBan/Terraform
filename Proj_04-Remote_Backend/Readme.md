@@ -95,15 +95,8 @@ aws dynamodb create-table \
 ```
 ### Initialize Terraform:
 ```
-
 terraform init
-
-Plan and Apply
-# Plan the infrastructure
 terraform plan
-# Apply the configuration
 terraform apply
-
-Destroy Infrastructure
 terraform destroy
 ```
