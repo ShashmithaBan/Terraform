@@ -100,3 +100,12 @@ terraform plan
 terraform apply
 terraform destroy
 ```
+
+## 📞 Support
+For issues and questions:
+
+Check Terraform documentation
+
+Review AWS service limits
+
+Validate variable configurations
