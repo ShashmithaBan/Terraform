@@ -1,3 +1,9 @@
+#################################################################################
+#This Project is using provisioners to run a puthon app on the EC2 instance after it is created
+#Using the remote-exec provisioner to run commands on the EC2 instance
+#Using the file provisioner to copy files to the EC2 instance
+#Using the local-exec provisioner to print commands on the Command prompt whatever we want
+#################################################################################
 module "aws_vpc" {
   source = "./modules/vpc"
   cidr_block = var.cidr_block

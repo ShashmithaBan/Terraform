@@ -1,3 +1,9 @@
+##########################################################################
+# This project is to modularize the terraform code
+# Modularizing the code will make it more readable and maintainable
+# It will also make it easier to reuse the code in other projects
+##########################################################################
+
 module "aws_vpc" {
   source = "./modules/vpc"
   cidr_block = var.cidr_block
